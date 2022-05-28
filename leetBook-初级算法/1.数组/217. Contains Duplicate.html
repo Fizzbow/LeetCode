@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <h1>寻找重复元素</h1>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css"
+    />
+  </head>
+
+  <body>
+    <h2>使用了js中Set数据类型的用法</h2>
+    <p>
+      1. set.has()方法判断是否在数组中重复出现，是返回true，否返回false
+      <br />
+      遍历Set如果有重复元素就返回true，否则加nums[i]到set中直到返回false
+    </p>
+  </body>
+  <script
+    src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"
+  >
+    var containsDuplicate = function (nums) {
+      const set = new Set();
+      for (let i = 0; i < nums.length; i++) {
+        if (set.has(nums[i])) {
+          return true;
+        }
+        set.add(nums[i]);
+      }
+      return false;
+    };
+    console.log(containsDuplicate([1, 2, 3, 1]));
+  </script>
+</html>
